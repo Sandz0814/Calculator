@@ -3,7 +3,7 @@ import os
 
 def clear():
     # Clear the console by scrolling the output
-    os.system('cls' if os.name == 'nt' else 'printf "\033c"')
+    os.system('cls')
 
 def separator():
     sep = "=" * 20
