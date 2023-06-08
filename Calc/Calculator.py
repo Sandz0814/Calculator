@@ -12,7 +12,7 @@ def print_separator():
     sep2 = "=" * 109
     print(sep2)
 
-print_separator()
+#print_separator()
 
 def print_operators():
     print("| (1) addition ||", "(2) subtraction ||", "(3) multiplication ||", "(4) division ||",
