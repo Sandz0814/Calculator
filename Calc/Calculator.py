@@ -2,7 +2,6 @@ import time
 import os
 
 def clear():
-    # Clear the console by scrolling the output
     os.system('cls')
 
 def separator():
@@ -46,7 +45,7 @@ def num3():
 
 def operator_error(error_message):
     error_value = error_message.split(": ")[1]
-    print(f"Invalid Operator!!, {error_value} Please select Operatoron the list:")
+    print(f'({error_value}) is invalid operator!! Please select correct operator on the list:')
     space()
 
 def num1():
@@ -70,7 +69,7 @@ def inputs():
 
 def input_error(error_message):
     error_value = error_message.split(": ")[1]
-    print(f"Invalid input!! {error_value} is not a number, Please input a number:")
+    print(f"Invalid input!! ({error_value}) is not a number, Please input a number:")
     space()
 
 def space():
