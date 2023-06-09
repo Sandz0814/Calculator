@@ -32,46 +32,31 @@ def footer():
     print("{:^107}".format("Thank you for using calculator"))
     print("{:^107}".format("Sandro Jimena 080879"))
 
-def operate():
-    n3 = num3()
-    return n3
 
-def num3():
-    while True:
-        try:
-            return int(input("Select operator: "))
-        except ValueError as error:
-            operator_error(str(error))
 
-def operator_error(error_message):
-    error_value = error_message.split(": ")[1]
-    print(f'({error_value}) is invalid operator!! Please select correct operator on the list:')
-    space()
 
+# Input functions ======================================================================================================
+def inputs():
+    n1 = num1()
+    n2 = num2()
+    return n1, n2
 def num1():
     while True:
         try:
             return float(input("Number1: "))
         except ValueError as error:
             input_error(str(error))
-
 def num2():
     while True:
         try:
             return float(input("Number2: "))
         except ValueError as error:
             input_error(str(error))
-
-def inputs():
-    n1 = num1()
-    n2 = num2()
-    return n1, n2
-
 def input_error(error_message):
     error_value = error_message.split(": ")[1]
     print(f"Invalid input!! ({error_value}) is not a number, Please input a number:")
     space()
-
+# ======================================================================================================================
 def space():
     print("")
 
@@ -79,9 +64,9 @@ while True:
     try:
         space()
 
-        n3 = operate()
+        operator = float(input("Select operator:"))
 
-        if n3 == 5:
+        if operator == 5:
             close = input("Do you want to close the calculator? (Y/N): ")
 
             if close.upper() == "Y":
@@ -117,37 +102,38 @@ while True:
                 print('"SOBRANG TANGA MO NAMAN, DYOS KA NG KABOBOHAN!!! SABING (Y/N) LANG EEHHH!! BOBO TALAGA"')
                 space()
                 print('"HINDI KA SIGURO MAHAL NG MAMA MO!! NUNG BATA KA KAPE PINAPA DEDE SAYO "')
-                time.sleep(10)
+                time.sleep(1)
                 clear()
                 print_header()
                 continue
 
-        if n3 == 6:
+        if operator == 6:
             clear()
             print_header()
             continue
 
-        if n3 > 6 or n3 < 1:
-            operator_error()
-            clear()
-            print_header()
+        if operator > 6 or operator < 1:
+            print(f"You input an invalid operator!! Please select from the operator list")
+            #time.sleep(3)
+            #clear()
+            #print_header()
             continue
 
         n1, n2 = inputs()
 
-        if n3 == 1:
+        if operator == 1:
             result = n1 + n2
             print(f'The answer is: {result}')
 
-        elif n3 == 2:
+        elif operator == 2:
             result = n1 - n2
             print(f'The answer is: {result}')
 
-        elif n3 == 3:
+        elif operator == 3:
             result = n1 * n2
             print(f'The answer is: {result}')
 
-        elif n3 == 4:
+        elif operator == 4:
             if n2 != 0:
                 result = n1 / n2
                 print(f'The answer is: {round(result, 2)}')
@@ -155,9 +141,10 @@ while True:
                 print("Error! Cannot divide by zero")
 
     except ValueError as error:
-        operator_error()
-        clear()
-        print_header()
+        print(f"You input an invalid operator!! Please select from the operator list")
+        #time.sleep(3)
+        #clear()
+        #print_header()
         continue
 
     separator()
