@@ -12,30 +12,29 @@ def print_separator():
     sep2 = "=" * 109
     print(sep2)
 
-#print_separator()
-
 def print_operators():
     print("| (1) addition ||", "(2) subtraction ||", "(3) multiplication ||", "(4) division ||",
           "(5) exit calculator ||", "(6) clear |")
-
 def print_header():
     print("{:^107}".format("Python Simple Calculator by Sandro"))
-
     print_separator()
     print_operators()
     print_separator()
     print("{:^107}".format("O P E R A T O R S"))
 
 print_header()
-
 def footer():
-    print("{:^107}".format("Thank you for using calculator"))
-    print("{:^107}".format("Sandro Jimena 080879"))
+    print("{:^107}".format("|Thank you for using calculator|"))
+    print("{:^107}".format("|Sandro Jimena 080879|"))
+def heart():
+    print("{:^107}".format("  * *     * *   "))
+    print("{:^107}".format("*      *      * "))
+    print("{:^107}".format(" *           *  "))
+    print("{:^107}".format("    *      *    "))
+    print("{:^107}".format("       **       "))
+def exit():
+    print("{:^107}".format("Exiting Calculator"))
 
-
-
-
-# Input functions ======================================================================================================
 def inputs():
     n1 = num1()
     n2 = num2()
@@ -56,7 +55,7 @@ def input_error(error_message):
     error_value = error_message.split(": ")[1]
     print(f"Invalid input!! ({error_value}) is not a number, Please input a number:")
     space()
-# ======================================================================================================================
+
 def space():
     print("")
 
@@ -70,7 +69,11 @@ while True:
             close = input("Do you want to close the calculator? (Y/N): ")
 
             if close.upper() == "Y":
-                print("Exiting the calculator...")
+                for _ in range(5):
+                    space()
+                exit()
+                space()
+                heart()
                 break
             elif close.upper() == "N":
                 clear()
@@ -80,7 +83,11 @@ while True:
                 close1 = input("Invalid choice! Please select (Y/N): ")
 
             if close1.upper() == "Y":
-                print("Exiting the calculator...")
+                for _ in range(5):
+                    space()
+                exit()
+                space()
+                heart()
                 break
             elif close1.upper() == "N":
                 clear()
@@ -89,7 +96,11 @@ while True:
                 close1 = input("Invalid choice again! Please select (Y/N) only idiot: ")
 
             if close1.upper() == "Y":
-                print("Exiting calculator")
+                for _ in range(5):
+                    space()
+                exit()
+                space()
+                heart()
                 break
             elif close1.upper() == "N":
                 clear()
@@ -114,9 +125,6 @@ while True:
 
         if operator > 6 or operator < 1:
             print(f"You input an invalid operator!! Please select from the operator list")
-            #time.sleep(3)
-            #clear()
-            #print_header()
             continue
 
         n1, n2 = inputs()
@@ -142,18 +150,13 @@ while True:
 
     except ValueError as error:
         print(f"You input an invalid operator!! Please select from the operator list")
-        #time.sleep(3)
-        #clear()
-        #print_header()
         continue
 
     separator()
 
 count = 0
-while count < 15:
+while count < 8:
     space()
     count += 1
 
-print_separator()
 footer()
-print_separator()
