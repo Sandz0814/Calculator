@@ -64,7 +64,7 @@ while True:
     try:
         space()
 
-        operator = float(input("Select operator:"))
+        operator = float(input("Select operator: "))
 
         if operator == 5:
             close = input("Do you want to close the calculator? (Y/N): ")
@@ -149,8 +149,10 @@ while True:
 
     separator()
 
-for _ in range(15):
+count = 0
+while count < 15:
     space()
+    count += 1
 
 print_separator()
 footer()
