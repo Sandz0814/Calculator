@@ -30,8 +30,8 @@ def heart():
     print("{:^107}".format("  * *     * *   "))
     print("{:^107}".format("*      *      * "))
     print("{:^107}".format(" *           *  "))
-    print("{:^107}".format("    *      *    "))
-    print("{:^107}".format("       **       "))
+    print("{:^107}".format("   *      *    "))
+    print("{:^107}".format("      **       "))
 def exit():
     print("{:^107}".format("Exiting Calculator"))
 
