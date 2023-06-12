@@ -131,20 +131,20 @@ while True:
 
         if operator == 1:
             result = n1 + n2
-            print(f'The answer is: {result}')
+            print(f'The sum is: {result}')
 
         elif operator == 2:
             result = n1 - n2
-            print(f'The answer is: {result}')
+            print(f'The subtraction is: {result}')
 
         elif operator == 3:
             result = n1 * n2
-            print(f'The answer is: {result}')
+            print(f'The multiplication is: {result}')
 
         elif operator == 4:
             if n2 != 0:
                 result = n1 / n2
-                print(f'The answer is: {round(result, 2)}')
+                print(f'The division  is: {round(result, 2)}')
             else:
                 print("Error! Cannot divide by zero")
 
